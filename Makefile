@@ -14,6 +14,10 @@ java: bin fizzbuzz.java
 	mv fizzbuzz.class bin/
 	echo "java -classpath $(PWD)/bin fizzbuzz" > bin/fizzbuzz-java
 	chmod +x bin/fizzbuzz-java
+ocaml:
+	ocamlc fizzbuzz.ml -o fizzbuzz-ocaml
+	mv fizzbuzz.cmo bin/
+	mv fizzbuzz.cmi bin/
 python: bin fizzbuzz.py
 	cp fizzbuzz.py bin/fizzbuzz-py
 	chmod +x bin/fizzbuzz-py
