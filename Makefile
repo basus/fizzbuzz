@@ -1,4 +1,4 @@
-all: c haskell python ruby
+all: c haskell java ocaml python rust ruby
 
 
 bin:
@@ -15,7 +15,7 @@ java: bin fizzbuzz.java
 	echo "java -classpath $(PWD)/bin fizzbuzz" > bin/fizzbuzz-java
 	chmod +x bin/fizzbuzz-java
 ocaml:
-	ocamlc fizzbuzz.ml -o fizzbuzz-ocaml
+	ocamlc fizzbuzz.ml -o bin/fizzbuzz-ocaml
 	mv fizzbuzz.cmo bin/
 	mv fizzbuzz.cmi bin/
 python: bin fizzbuzz.py
@@ -24,6 +24,8 @@ python: bin fizzbuzz.py
 ruby: bin fizzbuzz.rb
 	cp fizzbuzz.py bin/fizzbuzz-rb
 	chmod +x bin/fizzbuzz-rb
+rust: fizzbuzz.rs
+	rustc -o bin/fizzbuzz-rs fizzbuzz.rs
 clean: bin
 	rm bin/*
 	rmdir bin
